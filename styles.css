@@ -19,7 +19,7 @@ body {
     display: flex;
     font-size: 50px;
     justify-content: center;
-    margin: 100px 0;
+    margin: 50px 0;
 }
 
 .options {
@@ -28,8 +28,15 @@ body {
     gap: 20px;
 }
 
-.container {
+#container {
+    display:flex;
     background-color: white;
     height: 625px;
     width: 625px;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+}
+
+.divs {
+    flex: 1 0 auto;
 }
