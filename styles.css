@@ -35,8 +35,15 @@ body {
     width: 625px;
     flex: 0 0 auto;
     flex-wrap: wrap;
+    border: 1px;
 }
 
-.divs {
-    flex: 1 0 auto;
+.cell {
+    flex: 0 0 auto;
 }
+
+.draw-black {
+    flex: 0 0 auto;
+    background-color: black;
+}
+

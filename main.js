@@ -1,25 +1,29 @@
-const range = document.getElementById("myRange");
-
-// range.addEventListener('change', createDivs(range.value));
 
 function createDivs(value){
     const container = document.getElementById("container");
-    console.log(value);
+    // console.log(value);
     const grid_size = value * value;
-    console.log(`${container.offsetHeight} heightu`);
-    const size = container.offsetHeight / value;
-    console.log(`${typeof(container.style.height)} ${typeof(value)}`)
+    // console.log(`${container.offsetHeight} heightu`);
+    const size = Math.round((((container.offsetHeight - 1) / value) + Number.EPSILON) * 100) / 100;
+    // console.log(size)
 
     while(container.firstChild){
         container.removeChild(container.firstChild);
     }
     for(let i = 0; i < grid_size; i++){
-        const div = document.createElement('div');
+        const divs = document.createElement('div');
         // div.textContent = "yes";
-
-        div.style.width = `${size}px`;
-        div.style.height = `${size}px`;
-        div.className = "divs";
-        container.appendChild(div);
+        divs.style.width = `${size}px`;
+        divs.style.height = `${size}px`;
+        divs.className = "cell";
+        container.appendChild(divs);
     }
 }
+
+function applyBlack(node) {
+    node.className = "draw-black";
+}
+
+const cells = document.querySelectorAll('.cell');
+    
+cells.forEach(cell => cell.addEventListener('mouseenter', applyBlack(cell)));
