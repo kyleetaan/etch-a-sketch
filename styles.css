@@ -41,9 +41,3 @@ body {
 .cell {
     flex: 0 0 auto;
 }
-
-.draw-black {
-    flex: 0 0 auto;
-    background-color: black;
-}
-
